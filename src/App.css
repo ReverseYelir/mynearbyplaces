@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+
+}
+
+table {
+text-align:center
+}
+
+button {
+  background-color: #f43939;
+  color: white;
+  margin:5px
+}
+
+.navbar {
+  display: inline;
+}
+
+ul li {
+  display: flex;
+  margin:auto;
+}
+
+.username {
+  font-size: 1.2em;
+}

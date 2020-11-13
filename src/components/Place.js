@@ -1,11 +1,10 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
-class Login extends React.Component {
+class Place extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            username: "",
-            authenticated: false
+            places = []
         };
     }
 
@@ -43,6 +42,9 @@ class Login extends React.Component {
         }
         return(
         <div id="loginForm">
+            <div>
+                
+            </div>
             <form onSubmit={this.onSubmit}>
                 <label htmlFor="username">Username: </label>
                 <input type="text" name="username" value={this.state.username} onChange={this.onChange}></input>

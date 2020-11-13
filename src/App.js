@@ -1,8 +1,10 @@
-import logo from './logo.svg';
 import Home from './components/Home';
+import Login from './components/Login';
+import Add from './components/Add';
+import Delete from './components/Delete';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route
 } from "react-router-dom";
@@ -10,13 +12,22 @@ import {
 function App() {
   return (
     <div className="App">
-        <Router>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route exact path="/" render={props => <Home {...props}/>}>
+          <Route exact path="/" render={(props) => <Home {...props}/>}>
             
           </Route>
+          <Route exact path="/login" render={(props) => <Login {...props}/>}>
+
+          </Route>
+          <Route exact path="/add" render={(props) => <Add {...props}/>}>
+
+          </Route>
+          <Route exact path="/delete" render={(props) => <Delete {...props}/>}>
+
+          </Route>
         </Switch>
-      </Router>
+      </BrowserRouter>
       </div>
   );
 }
