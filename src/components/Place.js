@@ -8,12 +8,6 @@ class Place extends React.Component {
         };
     }
 
-    onLogin = () => {
-        if(this.state.authenticated) {
-            
-        }
-    }
-
     onChange = (event) => {
         const value = event.target.value;
         this.setState(

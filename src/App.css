@@ -37,8 +37,9 @@
   }
 }
 
-body {
-
+body{
+  margin: auto;
+  color:rgb(211, 35, 35);
 }
 
 table {
@@ -51,8 +52,11 @@ button {
   margin:5px
 }
 
-.navbar {
+#navigation-bar {
   display: inline;
+  margin-top: 105px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 ul li {
@@ -62,4 +66,75 @@ ul li {
 
 .username {
   font-size: 1.2em;
+}
+
+.hero {
+  background-image: url("/src/images/platter.jpg");
+  height: 600px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.hero {
+  color:white;
+  margin:auto;
+  margin-bottom: 2%;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.hero > h1 {
+    margin-top: 10%;
+}
+
+#placeSearchBox {
+  width: 40%;
+  height: 25px;
+}
+
+#username {
+  height: 25px;
+}
+
+#loginInput {
+  height: 25px;
+}
+
+label {
+  font-size: 1.5em;
+}
+
+button {
+  height: 25px;
+}
+
+.foodThumb {
+  width: 250px;
+  height: 250px;
+}
+
+#searchForm {
+  padding-top:1.5%;
+  margin-left: 25%;
+}
+
+label {
+  padding-right:15px;
+  padding-left: 15px;
+}
+
+.sep {
+  margin-left:42%;
+  margin-bottom: 2%;
+}
+
+#notLogged {
+  margin-right:2%;
+  margin-left:70%;
+}
+
+.resultPlace {
+  display: block;
+  margin-left:42.5%;
+  padding-top:1.5%;
 }

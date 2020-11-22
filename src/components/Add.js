@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
 class Add extends React.Component {
     constructor(props) {
         super();
@@ -10,7 +11,8 @@ class Add extends React.Component {
             hasDelivery:"Yes",
             hasTakeout: "Yes",
             address: "",
-            phoneNum: ""
+            phoneNum: "",
+            thumb: ""
         }
     }
 
@@ -45,11 +47,14 @@ class Add extends React.Component {
             hasDelivery: this.state.hasDelivery,
             hasTakeout: this.state.hasTakeout,
             address: this.state.address,
-            phoneNum: this.state.phoneNum
+            phoneNum: this.state.phoneNum,
+            thumb: this.state.thumb
         }
         return place
     }
     render () {
+        console.log("Props")
+        console.log(this.props)
         if(this.state.places.length === 0) {
             this.setPlaces();
         }
@@ -57,25 +62,43 @@ class Add extends React.Component {
             return this.state.name
         }
         return(
-        <div id="addForm">
-            <div>
-                
+        <div>
+            <h1 className="sep">Add a Place</h1>
+            <div id="addForm">
+                <Form>
+                    <Form.Group controlId="formName">
+                        <Form.Label>New Place Name</Form.Label>
+                        <Form.Control type="type" placeholder="Ex: Tucker's Chop House" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formType">
+                        <Form.Label>Place Type</Form.Label>
+                        <Form.Control type="type" placeholder="Ex: Chinese, American, Mexican" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formDelivery">
+                        <Form.Label>Does it have delivery?</Form.Label>
+                        <Form.Control type="type" placeholder="No" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formTakeout">
+                        <Form.Label>Does it have takeout?</Form.Label>
+                        <Form.Control type="type" placeholder="No" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formAddress">
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control type="type" placeholder="Ex: 1234 W Harmony St" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formPhone">
+                        <Form.Label>Phone Number</Form.Label>
+                        <Form.Control type="type" placeholder="Ex: 480-123-4567" />
+                    </Form.Group>
+
+                    <button type="submit">Add Place</button>
+                </Form>
             </div>
-            <form onSubmit={this.onSubmit}>
-                <label htmlFor="username">Name: </label>
-                <input type="text" name="name"  onChange={this.onChangeName}></input>
-                <label htmlFor="username">Type: </label>
-                <input type="text" name="type" onChange={this.onChangeType}></input>
-                <label htmlFor="delivery">Has Delivery: </label>
-                <input type="text" name="delivery" onChange={this.onChangeDelivery}></input>
-                <label htmlFor="takeout">Has Takeout: </label>
-                <input type="text" name="takeout" onChange={this.onChangeTakeout}></input>
-                <label htmlFor="address">Address: </label>
-                <input type="text" name="address" onChange={this.onChangeAddress}></input>
-                <label htmlFor="phoneNum">Phone Number: </label>
-                <input type="text" name="phoneNum" onChange={this.onChangePhoneNum}></input>
-                <button type="submit">Submit</button>
-            </form>
         </div>
         )
     }

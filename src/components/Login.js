@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 class Login extends React.Component {
     constructor(props) {
         super();
@@ -44,7 +45,7 @@ class Login extends React.Component {
         return(
         <div id="loginForm">
             <form onSubmit={this.onSubmit}>
-                <label htmlFor="username">Username: </label>
+                <label htmlFor="username">Sign in:</label>
                 <input type="text" name="username" value={this.state.username} onChange={this.onChange}></input>
                 <button type="submit">Login</button>
             </form>
